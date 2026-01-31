@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Micro Project 2.2 | Iris Species Classifier</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <header class="section-card header-center">
+        <h1>Subject: Machine Learning</h1>
+        <h2>Micro-Project 2.2: Classification Algorithms Challenge</h2>
+        <h4 class="highlight-text">Iris Species Classifier </h4>
+    </header>
+
+    <div class="equal-row">
+        <section class="section-card">
+            <h3><span class="icon">👥</span> Project Team</h3>
+            <div class="member-badge">
+                <span class="badge-label">3648</span>
+                <div class="details">
+                    <span class="role">ML Engineer</span>
+                    <span class="name">Miss. Shevatekar Shravani</span>
+                </div>
+            </div>
+            <div class="member-badge">
+                <span class="badge-label">3650</span>
+                <div class="details">
+                    <span class="role">Data Engineer</span>
+                    <span class="name">Miss. Solse Shreya</span>
+                </div>
+            </div>
+            <div class="member-badge">
+                <span class="badge-label">3656</span>
+                <div class="details">
+                    <span class="role">Analyst</span>
+                    <span class="name">Miss. Waghmare Nisha</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h3><span class="icon">🎓</span> Academic Details</h3>
+            <div class="member-badge academic-badge">
+                <span class="badge-label">College</span>
+                <div class="details">
+                    <span class="role"></span>
+                    <span class="name">Shri Siddheshwar Women's Polytechnic</span>
+                </div>
+            </div>
+            <div class="member-badge academic-badge">
+                <span class="badge-label">Lecturer</span>
+                <div class="details">
+                    <span class="role"></span>
+                    <span class="name">Mr. Akash Chatake</span>
+                </div>
+            </div>
+            <div class="member-badge academic-badge">
+                <span class="badge-label">Submission Date</span>
+                <div class="details">
+                    <span class="role"></span>
+                    <span class="name">January 30, 2026</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="section-card">
+        <h3>1. Aim</h3>
+        <p>To build a complete Machine Learning pipeline using a 10-step process to create an AI capable of accurately identifying flower species based on physical measurements.</p>
+    </section>
+
+    <section class="section-card">
+        <h3>2. Steps</h3>
+        <div class="methodology-grid">
+            <div class="step-item"><strong>1. Setup</strong>: Workspace configuration.</div>
+            <div class="step-item"><strong>2. Loading</strong>: CSV data import.</div>
+            <div class="step-item"><strong>3. Cleaning</strong>: Noise removal.</div>
+            <div class="step-item"><strong>4. EDA</strong>: Statistical mapping.</div>
+            <div class="step-item"><strong>5. Features</strong>: Defining $X$ and $y$.</div>
+            <div class="step-item"><strong>6. Split</strong>: 80/20 train-test split.</div>
+            <div class="step-item"><strong>7. Training</strong>: Logistic Regression.</div>
+            <div class="step-item"><strong>8. Visualization</strong>: Boundaries.</div>
+            <div class="step-item"><strong>9. Testing</strong>: Accuracy validation.</div>
+            <div class="step-item"><strong>10. Deployment</strong>: .pkl Export.</div>
+        </div>
+    </section>
+
+    <section class="section-card">
+        <h3>3. Action Plan</h3>
+        <div class="table-container">
+            <table class="action-table">
+                <thead>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Start Date</th>
+                        <th>Finish Date</th>
+                        <th>Responsibility</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Data Preparation And Pipeline Setup</td><td>27/01/2026</td><td>27/01/2026</td><td>Data Engineer</td></tr>
+                    <tr><td>Model development And Optimization</td><td>27/01/2026</td><td>28/01/2026</td><td>ML Engineer</td></tr>
+                    <tr><td>Analysis,Visualization,And documentation,WebPage</td><td>29/01/2026</td><td>30/01/2026</td><td>Analyst</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="section-card predictor-box">
+        <h3>Live Deployment: Species Predictor</h3>
+        <p>Enter measurements to test the trained model logic:</p>
+        <div class="input-grid">
+            <div class="input-group"><label>Sepal L</label><input type="number" id="sl" value="5.1"></div>
+            <div class="input-group"><label>Sepal W</label><input type="number" id="sw" value="3.5"></div>
+            <div class="input-group"><label>Petal L</label><input type="number" id="pl" placeholder="cm"></div>
+            <div class="input-group"><label>Petal W</label><input type="number" id="pw" placeholder="cm"></div>
+        </div>
+        <button onclick="predictSpecies()">Run ML Prediction</button>
+
+        <div id="result-container" class="hidden-results">
+            <div id="prediction-text"></div>
+            <div class="visuals-wrapper">
+                <div class="flower-box">
+                    <h4>Species Identity</h4>
+                    <img id="flower-img" src="" alt="Flower">
+                </div>
+                <div class="charts-box">
+                    <h4>Dynamic Map</h4>
+                    <canvas id="featureChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="equal-row">
+        <section class="section-card advantages-box">
+            <h3>7. Advantages</h3>
+            <ul>
+                <li><strong>Speed</strong>: Identifies species instantly.</li>
+                <li><strong>Precision</strong>: Optimized AI model.</li>
+                <li><strong>Portability</strong>: Reusable .pkl export.</li>
+            </ul>
+        </section>
+        <section class="section-card disadvantages-box">
+            <h3>8. Disadvantages</h3>
+            <ul>
+                <li><strong>Linearity</strong>: Fails on complex data.</li>
+                <li><strong>Scope</strong>: Limited to 3 species.</li>
+                <li><strong>Static</strong>: Manual updates needed.</li>
+            </ul>
+        </section>
+    </div>
+
+    <section class="section-card conclusion-box">
+        <h3>Conclusion</h3>
+        <p>The Iris Species Classifier successfully demonstrates the 10-step machine learning pipeline. The <strong>Decision Boundary</strong> confirmed that petal dimensions are the most critical features for accurate classification.</p>
+    </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+:root {
+    --primary: #1a73e8;
+    --bg-color: #f0f2f5;
+    --text-dark: #202124;
+    --text-muted: #5f6368;
+    --card-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg-color); margin: 0; padding: 20px; color: var(--text-dark); line-height: 1.5; }
+.container { max-width: 950px; margin: auto; }
+
+/* Global Card Styling */
+.section-card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid #e0e0e0;
+}
+
+.header-center { text-align: center; }
+.highlight-text { color: var(--primary); font-weight: 600; margin-top: 5px; }
+
+h3 { color: var(--primary); margin-top: 0; border-bottom: 2px solid #f0f4f8; padding-bottom: 10px; font-size: 1.15rem; }
+
+/* Side-by-Side Flex Layout */
+.equal-row { display: flex; gap: 20px; }
+.equal-row .section-card { flex: 1; }
+
+/* Unified Badge Formatting for Team & Academic */
+.member-badge {
+    display: flex;
+    align-items: center;
+    background: #f8faff;
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+.badge-label {
+    background: var(--primary);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-right: 15px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.academic-badge { border-left-color: #5f6368; }
+.academic-badge .badge-label { background: #5f6368; }
+
+.details .role { display: block; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; font-weight: bold; }
+.details .name { font-weight: bold; font-size: 0.9rem; }
+
+/* Methodology & Tables */
+.methodology-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.step-item { font-size: 0.85rem; padding: 8px; background: #fcfcfc; border: 1px solid #f0f0f0; border-radius: 6px; }
+
+.table-container { border-radius: 8px; overflow: hidden; border: 1px solid #eee; }
+.action-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.action-table th { background: var(--primary); color: white; padding: 12px; text-align: left; }
+.action-table td { padding: 12px; border-bottom: 1px solid #eee; }
+
+/* Predictor Logic */
+.predictor-box { background: #fafcff; border: 2px solid #d0e2ff; }
+.input-grid { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
+.input-group { display: flex; flex-direction: column; align-items: center; }
+.input-group label { font-size: 0.7rem; font-weight: bold; margin-bottom: 4px; }
+input { width: 85px; padding: 8px; border-radius: 6px; border: 1px solid #ccc; text-align: center; }
+
+button { width: 100%; background: var(--primary); color: white; border: none; padding: 14px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1rem; }
+button:hover { background: #1557b0; }
+
+.hidden-results { display: none; margin-top: 25px; }
+#prediction-text { font-size: 1.4rem; font-weight: bold; color: var(--primary); margin-bottom: 15px; text-align: center; }
+
+.visuals-wrapper { display: flex; gap: 20px; border-top: 1px solid #eee; padding-top: 20px; }
+.flower-box, .charts-box { flex: 1; }
+#flower-img { width: 100%; border-radius: 8px; border: 1px solid #ddd; }
+
+/* Pros & Cons */
+.advantages-box { border-top: 5px solid #34a853; background: #f6fff8; }
+.disadvantages-box { border-top: 5px solid #ea4335; background: #fff8f8; }
+
+.conclusion-box { border-top: 4px solid var(--primary); background: #f8f9fa; }
+
+@media (max-width: 768px) {
+    .equal-row { flex-direction: column; }
+    .methodology-grid { grid-template-columns: 1fr; }
+    .visuals-wrapper { flex-direction: column; }
+}
